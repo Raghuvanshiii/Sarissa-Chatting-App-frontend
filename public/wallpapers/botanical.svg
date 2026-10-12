@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+  <defs>
+    <style>
+      .leaf { fill: none; stroke: #5D8067; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0.22; }
+      .leaf-fill { fill: #5D8067; opacity: 0.12; }
+    </style>
+  </defs>
+
+  <!-- Botanical Sprig 1 -->
+  <g class="leaf" transform="translate(60, 40) rotate(25)">
+    <path d="M0 60 Q 15 30 10 0 Q 30 20 20 50" class="leaf-fill" />
+    <path d="M0 70 Q 20 35 15 0" />
+    <path d="M10 25 C 20 20 25 10 25 0 C 15 5 10 15 10 25 Z" class="leaf-fill" />
+    <path d="M5 45 C -5 40 -10 30 -10 20 C 0 25 5 35 5 45 Z" class="leaf-fill" />
+    <path d="M12 55 C 22 50 28 40 28 30 C 18 35 12 45 12 55 Z" class="leaf-fill" />
+  </g>
+
+  <!-- Botanical Sprig 2 -->
+  <g class="leaf" transform="translate(260, 80) rotate(-35)">
+    <path d="M0 70 Q 15 35 10 0" />
+    <path d="M7 20 C 17 15 22 5 22 -5 C 12 0 7 10 7 20 Z" class="leaf-fill" />
+    <path d="M3 40 C -7 35 -12 25 -12 15 C -2 20 3 30 3 40 Z" class="leaf-fill" />
+    <path d="M8 55 C 18 50 24 40 24 30 C 14 35 8 45 8 55 Z" class="leaf-fill" />
+  </g>
+
+  <!-- Botanical Sprig 3 -->
+  <g class="leaf" transform="translate(180, 210) rotate(15)">
+    <path d="M0 65 Q 18 30 12 0" />
+    <path d="M9 22 C 19 17 25 7 25 -3 C 15 2 9 12 9 22 Z" class="leaf-fill" />
+    <path d="M4 42 C -6 37 -12 27 -12 17 C -2 22 4 32 4 42 Z" class="leaf-fill" />
+  </g>
+
+  <!-- Botanical Sprig 4 -->
+  <g class="leaf" transform="translate(80, 240) rotate(-20)">
+    <path d="M0 70 Q -15 35 -10 0" />
+    <path d="M-7 20 C -17 15 -22 5 -22 -5 C -12 0 -7 10 -7 20 Z" class="leaf-fill" />
+    <path d="M-3 40 C 7 35 12 25 12 15 C 2 20 -3 30 -3 40 Z" class="leaf-fill" />
+  </g>
+
+  <!-- Delicate Flowers -->
+  <g transform="translate(300, 260)" class="leaf">
+    <circle cx="0" cy="0" r="3" fill="#5D8067" opacity="0.25" />
+    <circle cx="0" cy="-8" r="4" class="leaf-fill" />
+    <circle cx="8" cy="0" r="4" class="leaf-fill" />
+    <circle cx="0" cy="8" r="4" class="leaf-fill" />
+    <circle cx="-8" cy="0" r="4" class="leaf-fill" />
+    <path d="M0 3 L0 30" />
+  </g>
+
+  <g transform="translate(140, 90)" class="leaf">
+    <circle cx="0" cy="0" r="2.5" fill="#5D8067" opacity="0.25" />
+    <circle cx="0" cy="-6" r="3" class="leaf-fill" />
+    <circle cx="6" cy="0" r="3" class="leaf-fill" />
+    <circle cx="0" cy="6" r="3" class="leaf-fill" />
+    <circle cx="-6" cy="0" r="3" class="leaf-fill" />
+  </g>
+</svg>

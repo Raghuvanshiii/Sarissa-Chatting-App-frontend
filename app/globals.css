@@ -1,0 +1,549 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  --font-cute: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  --font-handwriting: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  --font-script: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  --font-brand: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-rail: var(--surface-rail);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-card: var(--border-card);
+  --color-pink-baby: var(--pink-baby);
+  --color-pink-light: var(--pink-light);
+  --color-pink-rose: var(--pink-rose);
+  --color-pink-dark: var(--pink-dark);
+  --color-pink-border: var(--pink-border);
+  --color-sage-accent: var(--sage-accent);
+  --color-sage-bubble: var(--sage-bubble);
+  --color-sage-bubble-text: var(--sage-bubble-text);
+  --color-sage-light: var(--sage-light);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  /* Scaled typography tiers (+1px throughout the entire app) */
+  --text-xs: 13px;
+  --text-xs--line-height: calc(17 / 13);
+  --text-sm: 15px;
+  --text-sm--line-height: calc(21 / 15);
+  --text-base: 17px;
+  --text-base--line-height: calc(25 / 17);
+  --text-lg: 19px;
+  --text-lg--line-height: calc(29 / 19);
+  --text-xl: 21px;
+  --text-xl--line-height: calc(29 / 21);
+  --text-2xl: 25px;
+  --text-2xl--line-height: calc(33 / 25);
+  --text-3xl: 31px;
+  --text-3xl--line-height: calc(37 / 31);
+  --text-4xl: 37px;
+  --text-4xl--line-height: calc(41 / 37);
+  --text-6xl: 61px;
+  --text-6xl--line-height: 1;
+}
+
+:root {
+  --background: #FFF5F7;
+  --foreground: #2D151D;
+  --surface: #FFFFFF;
+  --surface-muted: #FFF0F3;
+  --surface-rail: #FCE7EC;
+  --border-subtle: #F7CAD0;
+  --border-card: #F5BAC6;
+  --pink-baby: #FFF0F3;
+  --pink-light: #FCE7EC;
+  --pink-rose: #F09DAF;
+  --pink-dark: #C24A68;
+  --pink-border: #F5BAC6;
+  --sage-accent: #C24A68;
+  --sage-bubble: #FED049;
+  --sage-bubble-text: #1C1B18;
+  --sage-light: #FCE7EC;
+  --text-primary: #2D151D;
+  --text-secondary: #7C5362;
+  --text-muted: #9E7585;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #1C1017;
+  --foreground: #FCE7EC;
+  --surface: #261520;
+  --surface-muted: #2F1A28;
+  --surface-rail: #20101A;
+  --border-subtle: #4D263B;
+  --border-card: #5E2D47;
+  --pink-baby: #2F1A28;
+  --pink-light: #4D263B;
+  --pink-rose: #F09DAF;
+  --pink-dark: #E07A93;
+  --pink-border: #5E2D47;
+  --sage-accent: #F09DAF;
+  --sage-bubble: #E5B834;
+  --sage-bubble-text: #1C1017;
+  --sage-light: #3D1E31;
+  --text-primary: #FDE8ED;
+  --text-secondary: #D4A5B7;
+  --text-muted: #A8788D;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  letter-spacing: 0.012em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure Patrick Hand applies to all buttons, inputs, textareas, selects */
+button,
+input,
+textarea,
+select,
+optgroup {
+  font-family: 'Patrick Hand', 'Caveat', cursive, sans-serif !important;
+}
+
+/* Cross-platform system emoji font rendering */
+.emoji-font,
+.emoji-char {
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Symbol", sans-serif;
+  font-variant-emoji: emoji;
+}
+
+/* Sarissa Wouts Hand-Drawn Exact Typography Classes matching Attachments */
+.font-handwriting,
+.font-script,
+.font-brand,
+.font-cute,
+.font-sans {
+  font-family: 'Patrick Hand', 'Caveat', cursive, sans-serif !important;
+}
+
+/* ============================================================ */
+/* AUTHENTICATION & LOGIN UI PRESERVATION                       */
+/* The front page (Login/Register) is locked to its light       */
+/* warm neutral & forest/sage aesthetic.                        */
+/* ============================================================ */
+[data-auth-screen],
+[data-auth-screen] * {
+  color-scheme: light !important;
+}
+
+[data-auth-screen] {
+  background-color: #FAF8F5 !important;
+  color: #1C1B18 !important;
+}
+
+[data-auth-screen] .bg-white {
+  background-color: #FFFFFF !important;
+}
+
+[data-auth-screen] input:not([type="checkbox"]):not([type="radio"]) {
+  background-color: #FFFFFF !important;
+  border-color: #E5E2D8 !important;
+  color: #1C1B18 !important;
+}
+
+[data-auth-screen] input::placeholder {
+  color: #94928B !important;
+}
+
+[data-auth-screen] .text-\[\#1C1B18\],
+[data-auth-screen] .text-\[\#111827\],
+[data-auth-screen] .text-\[\#101828\] {
+  color: #1C1B18 !important;
+}
+
+[data-auth-screen] .text-\[\#7A7870\],
+[data-auth-screen] .text-\[\#6B7280\] {
+  color: #7A7870 !important;
+}
+
+[data-auth-screen] .text-\[\#94928B\],
+[data-auth-screen] .text-\[\#9CA3AF\] {
+  color: #94928B !important;
+}
+
+/* ============================================================ */
+/* DARK MODE OVERRIDES (Strictly Scoped to Authenticated App)   */
+/* Only active inside [data-chat-workspace] & [data-chat-modal] */
+/* ============================================================ */
+
+/* Backgrounds & surfaces */
+.dark [data-chat-workspace] .bg-\[\#FAF8F5\],
+.dark [data-chat-workspace] .bg-\[\#faf8f5\] {
+  background-color: var(--background) !important;
+}
+
+.dark [data-chat-workspace] .bg-\[\#F8F6F1\],
+.dark [data-chat-workspace] .bg-\[\#f8f6f1\] {
+  background-color: var(--surface-rail) !important;
+}
+
+.dark [data-chat-workspace] .bg-\[\#F7F5EF\],
+.dark [data-chat-workspace] .bg-\[\#f7f5ef\],
+.dark [data-chat-workspace] .bg-\[\#F6F4EE\],
+.dark [data-chat-workspace] .bg-\[\#f6f4ee\],
+.dark [data-chat-workspace] .bg-\[\#F4F1EA\],
+.dark [data-chat-workspace] .bg-\[\#f4f1ea\],
+.dark [data-chat-workspace] .bg-\[\#F2EFE9\],
+.dark [data-chat-workspace] .bg-\[\#f2efe9\] {
+  background-color: var(--surface-muted) !important;
+}
+
+.dark [data-chat-workspace] .bg-white,
+.dark [data-chat-modal] .bg-white,
+.dark [data-chat-workspace] .bg-\[\#FFFFFF\],
+.dark [data-chat-workspace] .bg-\[\#ffffff\],
+.dark [data-chat-modal] .bg-\[\#FFFFFF\],
+.dark [data-chat-modal] .bg-\[\#ffffff\] {
+  background-color: var(--surface) !important;
+}
+
+.dark [data-chat-workspace] .bg-white\/95,
+.dark [data-chat-workspace] .bg-white\/90,
+.dark [data-chat-workspace] .bg-white\/80,
+.dark [data-chat-workspace] .bg-white\/75,
+.dark [data-chat-workspace] .bg-white\/70,
+.dark [data-chat-workspace] .bg-white\/60,
+.dark [data-chat-workspace] .bg-white\/50,
+.dark [data-chat-modal] .bg-white\/95,
+.dark [data-chat-modal] .bg-white\/90 {
+  background-color: rgba(34, 34, 31, 0.92) !important;
+}
+
+/* Hovers */
+.dark [data-chat-workspace] .hover\:bg-\[\#EFECE3\]:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#efece3\]:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#EFECE3\]\/70:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#efece3\]\/70:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#F2EFE8\]:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#f2efe8\]:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#FAF8F5\]:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#faf8f5\]:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#F4F1EA\]:hover,
+.dark [data-chat-workspace] .hover\:bg-\[\#f4f1ea\]:hover,
+.dark [data-chat-workspace] .hover\:bg-zinc-100:hover,
+.dark [data-chat-workspace] .hover\:bg-gray-100:hover,
+.dark [data-chat-workspace] .hover\:bg-zinc-50:hover,
+.dark [data-chat-workspace] .hover\:bg-white\/80:hover,
+.dark [data-chat-workspace] .hover\:bg-white:hover,
+.dark [data-chat-modal] .hover\:bg-\[\#EFECE3\]:hover,
+.dark [data-chat-modal] .hover\:bg-\[\#F4F1EA\]:hover,
+.dark [data-chat-modal] .hover\:bg-\[\#f4f1ea\]:hover,
+.dark [data-chat-modal] .hover\:bg-white:hover {
+  background-color: #2C2C28 !important;
+}
+
+/* Borders */
+.dark [data-chat-workspace] .border-\[\#E8E5DD\],
+.dark [data-chat-workspace] .border-\[\#e8e5dd\],
+.dark [data-chat-workspace] .border-\[\#EAE7DD\],
+.dark [data-chat-workspace] .border-\[\#eae7dd\],
+.dark [data-chat-workspace] .border-\[\#E5E2D8\],
+.dark [data-chat-workspace] .border-\[\#e5e2d8\],
+.dark [data-chat-workspace] .border-\[\#ECE9E2\],
+.dark [data-chat-workspace] .border-\[\#ece9e2\],
+.dark [data-chat-workspace] .border-\[\#E8E5DC\],
+.dark [data-chat-workspace] .border-\[\#e8e5dc\],
+.dark [data-chat-workspace] .border-\[\#F5F3EC\],
+.dark [data-chat-workspace] .border-\[\#f5f3ec\],
+.dark [data-chat-workspace] .border-zinc-200,
+.dark [data-chat-workspace] .border-zinc-200\/80,
+.dark [data-chat-workspace] .border-zinc-200\/70,
+.dark [data-chat-workspace] .border-zinc-100,
+.dark [data-chat-workspace] .border-gray-200,
+.dark [data-chat-workspace] .border-gray-100,
+.dark [data-chat-modal] .border-\[\#E8E5DD\],
+.dark [data-chat-modal] .border-\[\#eae7dd\],
+.dark [data-chat-modal] .border-\[\#E5E2D8\],
+.dark [data-chat-modal] .border-\[\#e5e2d8\] {
+  border-color: var(--border-subtle) !important;
+}
+
+.dark [data-chat-workspace] .border-\[\#D0DFD0\],
+.dark [data-chat-workspace] .border-\[\#d0dfd0\],
+.dark [data-chat-workspace] .border-\[\#D5E0D5\],
+.dark [data-chat-workspace] .border-\[\#d5e0d5\] {
+  border-color: #384B3B !important;
+}
+
+.dark [data-chat-workspace] .divide-\[\#E8E5DD\] > :not([hidden]) ~ :not([hidden]),
+.dark [data-chat-workspace] .divide-\[\#eae7dd\] > :not([hidden]) ~ :not([hidden]),
+.dark [data-chat-modal] .divide-\[\#E8E5DD\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-subtle) !important;
+}
+
+/* Text Primary */
+.dark [data-chat-workspace] .text-\[\#1C1B18\],
+.dark [data-chat-workspace] .text-\[\#1c1b18\],
+.dark [data-chat-workspace] .text-zinc-900,
+.dark [data-chat-workspace] .text-gray-900,
+.dark [data-chat-workspace] .text-zinc-800,
+.dark [data-chat-workspace] .text-gray-800,
+.dark [data-chat-modal] .text-\[\#1C1B18\],
+.dark [data-chat-modal] .text-\[\#1c1b18\],
+.dark [data-chat-modal] .text-zinc-900 {
+  color: var(--text-primary) !important;
+}
+
+/* Text Secondary */
+.dark [data-chat-workspace] .text-\[\#716F68\],
+.dark [data-chat-workspace] .text-\[\#716f68\],
+.dark [data-chat-workspace] .text-\[\#7A7870\],
+.dark [data-chat-workspace] .text-\[\#7a7870\],
+.dark [data-chat-workspace] .text-\[\#6C6A63\],
+.dark [data-chat-workspace] .text-\[\#6c6a63\],
+.dark [data-chat-workspace] .text-zinc-700,
+.dark [data-chat-workspace] .text-zinc-600,
+.dark [data-chat-workspace] .text-gray-600,
+.dark [data-chat-modal] .text-\[\#716F68\],
+.dark [data-chat-modal] .text-\[\#7A7870\],
+.dark [data-chat-modal] .text-\[\#6C6A63\] {
+  color: var(--text-secondary) !important;
+}
+
+/* Text Muted */
+.dark [data-chat-workspace] .text-\[\#94928B\],
+.dark [data-chat-workspace] .text-\[\#94928b\],
+.dark [data-chat-workspace] .text-\[\#A8A49A\],
+.dark [data-chat-workspace] .text-\[\#a8a49a\],
+.dark [data-chat-workspace] .text-zinc-500,
+.dark [data-chat-workspace] .text-zinc-400,
+.dark [data-chat-workspace] .text-gray-400,
+.dark [data-chat-modal] .text-\[\#94928B\],
+.dark [data-chat-modal] .text-\[\#A8A49A\] {
+  color: var(--text-muted) !important;
+}
+
+/* Text on Hover */
+.dark [data-chat-workspace] .hover\:text-\[\#1C1B18\]:hover,
+.dark [data-chat-workspace] .hover\:text-\[\#1c1b18\]:hover,
+.dark [data-chat-modal] .hover\:text-\[\#1C1B18\]:hover {
+  color: var(--text-primary) !important;
+}
+
+/* Sage Brand and Highlights */
+.dark [data-chat-workspace] .bg-\[\#E5EFE5\],
+.dark [data-chat-workspace] .bg-\[\#e5efe5\],
+.dark [data-chat-workspace] .bg-\[\#E4ECE3\],
+.dark [data-chat-workspace] .bg-\[\#e4ece3\],
+.dark [data-chat-modal] .bg-\[\#E5EFE5\],
+.dark [data-chat-modal] .bg-\[\#E4ECE3\] {
+  background-color: var(--sage-light) !important;
+}
+
+.dark [data-chat-workspace] .text-\[\#2F4936\],
+.dark [data-chat-workspace] .text-\[\#2f4936\],
+.dark [data-chat-workspace] .text-\[\#344D3B\],
+.dark [data-chat-workspace] .text-\[\#344d3b\],
+.dark [data-chat-modal] .text-\[\#2F4936\] {
+  color: #A3C9AB !important;
+}
+
+/* Sent message bubbles */
+.dark [data-chat-workspace] .bg-\[\#DCE8DC\],
+.dark [data-chat-workspace] .bg-\[\#dce8dc\] {
+  background-color: var(--sage-bubble) !important;
+  color: var(--sage-bubble-text) !important;
+}
+
+.dark [data-chat-workspace] .bg-\[\#DCE8DC\] .text-\[\#1D2D1D\],
+.dark [data-chat-workspace] .bg-\[\#dce8dc\] .text-\[\#1d2d1d\] {
+  color: var(--sage-bubble-text) !important;
+}
+
+.dark [data-chat-workspace] .bg-\[\#DCE8DC\] .text-\[\#2F4936\]\/70,
+.dark [data-chat-workspace] .bg-\[\#dce8dc\] .text-\[\#2f4936\]\/70 {
+  color: rgba(226, 237, 227, 0.7) !important;
+}
+
+.dark [data-chat-workspace] .bg-\[\#EAE7DD\],
+.dark [data-chat-workspace] .bg-\[\#eae7dd\],
+.dark [data-chat-workspace] .bg-\[\#E2DFD6\],
+.dark [data-chat-workspace] .bg-\[\#e2dfd6\] {
+  background-color: #2A2A26 !important;
+}
+
+.dark [data-chat-workspace] .bg-\[\#D6E3D6\],
+.dark [data-chat-workspace] .bg-\[\#d6e3d6\] {
+  background-color: #243326 !important;
+  color: #8EB897 !important;
+}
+
+/* Form Inputs and Textareas in Chat Workspace & Modals */
+.dark [data-chat-workspace] input:not([type="checkbox"]):not([type="radio"]),
+.dark [data-chat-workspace] textarea,
+.dark [data-chat-modal] input:not([type="checkbox"]):not([type="radio"]),
+.dark [data-chat-modal] textarea {
+  background-color: var(--surface-muted) !important;
+  border-color: var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark [data-chat-workspace] input::placeholder,
+.dark [data-chat-workspace] textarea::placeholder,
+.dark [data-chat-modal] input::placeholder,
+.dark [data-chat-modal] textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.dark [data-chat-workspace] input:focus,
+.dark [data-chat-workspace] textarea:focus,
+.dark [data-chat-modal] input:focus,
+.dark [data-chat-modal] textarea:focus {
+  border-color: var(--sage-accent) !important;
+}
+
+/* Selection in Workspace */
+.dark [data-chat-workspace] ::selection,
+.dark [data-chat-modal] ::selection {
+  background-color: #28372A;
+  color: #E2EDE3;
+}
+
+/* Rings in Chat Workspace */
+.dark [data-chat-workspace] .ring-white {
+  --tw-ring-color: #22221F !important;
+}
+
+.dark [data-chat-workspace] .ring-\[\#F8F6F1\],
+.dark [data-chat-workspace] .ring-\[\#f8f6f1\],
+.dark [data-chat-workspace] .ring-\[\#F7F5EF\],
+.dark [data-chat-workspace] .ring-\[\#f7f5ef\],
+.dark [data-chat-workspace] .ring-\[\#FAF8F5\],
+.dark [data-chat-workspace] .ring-\[\#faf8f5\] {
+  --tw-ring-color: #151513 !important;
+}
+
+/* Shadows */
+.dark [data-chat-workspace] .shadow-xs,
+.dark [data-chat-workspace] .shadow-sm,
+.dark [data-chat-workspace] .shadow-md,
+.dark [data-chat-workspace] .shadow-lg,
+.dark [data-chat-workspace] .shadow-xl,
+.dark [data-chat-workspace] .shadow-2xl,
+.dark [data-chat-modal] .shadow-xl {
+  --tw-shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Warm editorial custom theme for emoji-picker-react */
+.EmojiPickerReact {
+  border: 1px solid #F5BAC6 !important;
+  font-family: inherit !important;
+  border-radius: 1rem !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 10px 30px -10px rgba(194,74,104,0.12) !important;
+}
+
+.dark [data-chat-workspace] .EmojiPickerReact,
+.dark [data-chat-modal] .EmojiPickerReact,
+.EmojiPickerReact.epr-dark-theme {
+  border-color: #5E2D47 !important;
+  background-color: #261520 !important;
+  --epr-bg-color: #261520 !important;
+  --epr-category-label-bg-color: #261520 !important;
+  --epr-search-input-bg-color: #1F1017 !important;
+  --epr-picker-border-color: #5E2D47 !important;
+  --epr-hover-bg-color: #361D2B !important;
+  --epr-highlight-color: #F09DAF !important;
+  --epr-category-icon-active-color: #F09DAF !important;
+  --epr-text-color: #FDE8ED !important;
+}
+
+.EmojiPickerReact.epr-light-theme {
+  --epr-bg-color: #FFFFFF !important;
+  --epr-category-label-bg-color: #FFFFFF !important;
+  --epr-search-input-bg-color: #FFF0F3 !important;
+  --epr-picker-border-color: #F5BAC6 !important;
+  --epr-hover-bg-color: #FCE7EC !important;
+  --epr-highlight-color: #C24A68 !important;
+  --epr-category-icon-active-color: #C24A68 !important;
+  --epr-text-color: #2D151D !important;
+}
+
+.EmojiPickerReact .epr-emoji-img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.EmojiPickerReact .epr-body {
+  scrollbar-width: thin;
+}
+
+/* Custom warm pink minimal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(240, 157, 175, 0.45);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(194, 74, 104, 0.65);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(170, 168, 159, 0.25);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(170, 168, 159, 0.45);
+}
+
+.font-handwriting {
+  font-family: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
+.font-quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.font-courgette {
+  font-family: 'Courgette', 'Dancing Script', 'Caveat', cursive;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+@keyframes petalSway {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(35px, 120px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.animate-petal {
+  animation: petalSway 7s ease-in-out infinite;
+}
+

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="216" height="374" viewBox="0 0 216 374">
+  <!-- Base Background -->
+  <rect width="216" height="374" fill="#FFFFFF"/>
+
+  <!-- Honeycomb Hexagonal Mosaic Tiles (Sarissa Wouts Design) -->
+  <g stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round">
+    <!-- Hexagon 1 (Warm Coral Rose) -->
+    <polygon points="54,-15.583 108,15.583 108,77.917 54,109.083 0,77.917 0,15.583" fill="#E8869A"/>
+    <polygon points="54,358.417 108,389.583 108,451.917 54,483.083 0,451.917 0,389.583" fill="#E8869A"/>
+
+    <!-- Hexagon 2 (Soft Medium Pink) -->
+    <polygon points="162,-15.583 216,15.583 216,77.917 162,109.083 108,77.917 108,15.583" fill="#F3AAB9"/>
+    <polygon points="162,358.417 216,389.583 216,451.917 162,483.083 108,451.917 108,389.583" fill="#F3AAB9"/>
+
+    <!-- Hexagon 3 (Warm Rose) -->
+    <polygon points="0,77.917 54,109.083 54,171.417 0,202.583 -54,171.417 -54,109.083" fill="#EE96A8"/>
+    <polygon points="216,77.917 270,109.083 270,171.417 216,202.583 162,171.417 162,109.083" fill="#EE96A8"/>
+
+    <!-- Hexagon 4 (Deep Coral Rose) -->
+    <polygon points="108,77.917 162,109.083 162,171.417 108,202.583 54,171.417 54,109.083" fill="#EA8D9E"/>
+
+    <!-- Hexagon 5 (Light Pastel Rose) -->
+    <polygon points="54,171.417 108,202.583 108,264.917 54,296.083 0,264.917 0,202.583" fill="#F8C0CC"/>
+
+    <!-- Hexagon 6 (Vibrant Rich Rose) -->
+    <polygon points="162,171.417 216,202.583 216,264.917 162,296.083 108,264.917 108,202.583" fill="#E58095"/>
+
+    <!-- Hexagon 7 (Muted Blush Pink) -->
+    <polygon points="0,264.917 54,296.083 54,358.417 0,389.583 -54,358.417 -54,296.083" fill="#F5B2BF"/>
+    <polygon points="216,264.917 270,296.083 270,358.417 216,389.583 162,358.417 162,296.083" fill="#F5B2BF"/>
+    <polygon points="0,-109.083 54,-77.917 54,-15.583 0,15.583 -54,-15.583 -54,-77.917" fill="#F5B2BF"/>
+    <polygon points="216,-109.083 270,-77.917 270,-15.583 216,15.583 162,-15.583 162,-77.917" fill="#F5B2BF"/>
+
+    <!-- Hexagon 8 (Soft Cream Rose) -->
+    <polygon points="108,264.917 162,296.083 162,358.417 108,389.583 54,358.417 54,296.083" fill="#FAD1DB"/>
+    <polygon points="108,-109.083 162,-77.917 162,-15.583 108,15.583 54,-15.583 54,-77.917" fill="#FAD1DB"/>
+  </g>
+</svg>
